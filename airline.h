@@ -1,5 +1,3 @@
-
-
 void initSeats(int seats[], int size);
 void displaySeats(int seats[], int size);
 int assignSeat(int st[], int size, int seatType);

@@ -1,14 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
+//sets all index of array to 0
 void initSeats(int seats[], int size){
 	memset(seats, 0, size*sizeof(seats[0])); 
 }
 
 void Exit(void){
-	printf("\nNext flight leaves in 3 hours.");
+	printf("\nNext flight leaves in 3 hours.\n\n");
+	system("pause");
 }
 
+//Display the values of index in Array
 void displaySeats(int seats[], int size){
 	int i;
 	for(i =0;i<size;i++){
@@ -17,6 +20,7 @@ void displaySeats(int seats[], int size){
 	}
 }
 
+//return the number of seats in specific section
 int assignSeat(int st[], int size, int seatType){
 	int avail,opt;
 	if(seatType ==1){
@@ -41,6 +45,7 @@ int assignSeat(int st[], int size, int seatType){
 	}
 }
 
+//return seat number in first class section
 int assignFirstClass(int seats[], int size){
 	int i;
 	for(i=0;i<size/2;i++)
@@ -51,6 +56,7 @@ int assignFirstClass(int seats[], int size){
 	return -1;
 }
 
+//return seat number in economy section
 int assignEconomy(int seats[], int size){
 	int i;
 	for(i=size/2;i<size;i++)
@@ -61,12 +67,16 @@ int assignEconomy(int seats[], int size){
 	return -1;
 }
 
+//prints the board pass with the seat number
 void boardPass(int seat){
+	
 	printf("-----------------------");
 	(seat+1<=5) ? printf("\n| Boarding Pass       |\n| First Class Section |\n| Seat #%d             |",seat+1) : printf("\n| Boarding Pass       |\n| Economy Section     |\n| Seat #%d             |",seat+1);
-	printf("\n-----------------------");
+	printf("\n-----------------------\n\n");
+	system("pause");
 }
 
+//check if there's available seats
 int isAvailable(int seats[],int size){
 	int i;
 	for(i=0;i<size;i++)
@@ -74,4 +84,3 @@ int isAvailable(int seats[],int size){
 			return 1;
 	return 0;
 }
-
